@@ -1,6 +1,8 @@
 <div>
-  <button>
-    <img src="" alt="" />
-    <span>NAME</span>
+  <button (click)="onSelectUser()">
+    <!-- Property Binding -->
+    <img [src]="imagePath" [alt]="name" />
+    <!-- String interpolation -->
+    <span>{{ name }}</span>
   </button>
 </div>
