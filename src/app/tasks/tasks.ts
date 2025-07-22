@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Task } from './task/task';
 import { NewTask } from './new-task/new-task';
-import { NewTaskDataInterface } from './task/task.model';
 import { TasksService } from './tasks.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class Tasks {
 
   isAddingTask = false;
 
-  constructor(private tasksService: TasksService) {}
+  private tasksService = inject(TasksService);
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);
